@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rent Holiday Uganda · A Bill for 2 Million Ugandans</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #14171f;
+    --ink-soft: #2d3440;
+    --cream: #fdf9f3;
+    --paper: #ffffff;
+    --sand: #efe6da;
+    --red: #c92a2a;
+    --red-dark: #8b1a1a;
+    --gold: #e8a020;
+    --green: #25d366;
+    --green-dark: #075e54;
+    --radius-xl: 2.5rem;
+    --radius-lg: 1.5rem;
+    --shadow: 0 22px 45px -18px rgba(20, 23, 31, 0.28);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ---------- READING PROGRESS ---------- */
+  #readProgress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 4px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+    z-index: 100;
+    transition: width 0.1s linear;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* ---------- LAYOUT ---------- */
+  .story {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem;
+  }
+
+  .story p {
+    font-size: 1.18rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.4rem;
+  }
+
+  .story p.lead {
+    font-size: 1.35rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .band { padding: 3.5rem 1.5rem; }
+
+  .band-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background:
+      radial-gradient(circle at 15% 10%, rgba(232,160,32,0.18), transparent 45%),
+      radial-gradient(circle at 90% 85%, rgba(201,42,42,0.16), transparent 50%),
+      linear-gradient(160deg, #ffffff 0%, #fff6e9 100%);
+    border-bottom: 1px solid var(--sand);
+    padding: 4.5rem 1.5rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--red);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.55rem 1.4rem;
+    border-radius: 40px;
+    box-shadow: 0 6px 0 var(--red-dark);
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.1rem, 6vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 .hl {
+    background: linear-gradient(180deg, transparent 62%, #ffe08a 62%);
+    padding: 0 0.15em;
+  }
+
+  .hero h1 .red { color: var(--red); }
+
+  .hero .sub {
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    color: var(--ink-soft);
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.1rem;
+    background: #fff;
+    border: 2px solid var(--sand);
+    border-radius: 100px;
+    padding: 0.9rem 2rem 0.9rem 1.4rem;
+    box-shadow: var(--shadow);
+  }
+
+  .counter i {
+    font-size: 2rem;
+    color: var(--green-dark);
+    background: #e6f6ec;
+    width: 3.4rem; height: 3.4rem;
+    display: grid; place-items: center;
+    border-radius: 50%;
+  }
+
+  .counter .num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .counter .lbl {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7280;
+    font-weight: 600;
+  }
+
+  .scroll-hint {
+    margin-top: 3rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #9a8f80;
+    font-weight: 600;
+  }
+
+  .scroll-hint i { display: block; margin-top: 0.6rem; font-size: 1.2rem; animation: bob 1.8s infinite; }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  /* ---------- BLOCKQUOTES ---------- */
+  blockquote {
+    position: relative;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.45rem, 3.6vw, 2.15rem);
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 2.8rem 0;
+    padding: 1.6rem 1.5rem 1.6rem 2.2rem;
+    border-left: 10px solid var(--red);
+    background: linear-gradient(90deg, #fff2e2 0%, rgba(255,242,226,0) 100%);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  }
+
+  blockquote::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.35em;
+    left: 0.35rem;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--red);
+    opacity: 0.16;
+    font-family: Georgia, serif;
+  }
+
+  blockquote.gold {
+    border-left-color: var(--gold);
+    background: linear-gradient(90deg, #fff8e6 0%, rgba(255,248,230,0) 100%);
+  }
+
+  blockquote.gold::before { color: var(--gold); }
+
+  blockquote.dark {
+    background: var(--ink);
+    color: #fff;
+    border-left-color: var(--gold);
+    border-radius: var(--radius-lg);
+    padding: 2rem 2rem 2rem 2.6rem;
+  }
+
+  blockquote.dark::before { color: var(--gold); opacity: 0.35; }
+
+  blockquote cite {
+    display: block;
+    margin-top: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--red);
+    opacity: 0.85;
+  }
+
+  blockquote.dark cite { color: var(--gold); }
+
+  /* ---------- STATS BAND ---------- */
+  .stats-band { background: var(--ink); color: #fff; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .stat {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-lg);
+    padding: 1.8rem 1.2rem;
+    text-align: center;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .stat:hover { transform: translateY(-6px); background: rgba(255,255,255,0.1); }
+
+  .stat i { font-size: 2.2rem; color: var(--gold); margin-bottom: 0.7rem; }
+
+  .stat .big {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .stat .lbl {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.75;
+    font-weight: 600;
+  }
+
+  /* ---------- REQUIREMENTS ---------- */
+  .req-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.3rem;
+    margin-top: 2rem;
+  }
+
+  .req-card {
+    background: var(--paper);
+    border: 1px solid var(--sand);
+    border-radius: var(--radius-lg);
+    padding: 1.8rem 1.5rem;
+    box-shadow: 0 10px 24px -14px rgba(20,23,31,0.2);
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .req-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 30px -14px rgba(20,23,31,0.28);
+  }
+
+  .req-card i {
+    font-size: 1.6rem;
+    color: var(--red);
+    background: #fdeaea;
+    width: 3rem; height: 3rem;
+    display: grid; place-items: center;
+    border-radius: 14px;
+    flex-shrink: 0;
+  }
+
+  .req-card h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.12rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .req-card p { font-size: 0.95rem; color: #6b7280; margin: 0; }
+
+  /* ---------- FORM SECTION ---------- */
+  .form-section {
+    background:
+      radial-gradient(circle at 85% 10%, rgba(232,160,32,0.14), transparent 45%),
+      linear-gradient(180deg, #fffdf9 0%, #fff6e9 100%);
+    border-top: 1px solid var(--sand);
+    border-bottom: 1px solid var(--sand);
+    scroll-margin-top: 20px;
+  }
+
+  .form-card {
+    background: var(--paper);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--sand);
+    padding: 2.5rem 2.2rem 2.8rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .form-head { text-align: center; margin-bottom: 1.5rem; }
+
+  .form-head .pill {
+    display: inline-block;
+    background: #e6f6ec;
+    color: var(--green-dark);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1.2rem;
+    border-radius: 40px;
+    margin-bottom: 1rem;
+  }
+
+  .form-head h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+  }
+
+  .form-head p { color: #6b7280; max-width: 560px; margin: 0 auto; }
+
+  .count-progress {
+    background: #eee6db;
+    border-radius: 40px;
+    height: 12px;
+    overflow: hidden;
+    margin: 1.6rem auto 0;
+    max-width: 420px;
+  }
+
+  .count-progress span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+    border-radius: 40px;
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .progress-note {
+    font-size: 0.82rem;
+    color: #8a8177;
+    text-align: center;
+    margin-top: 0.6rem;
+    font-weight: 600;
+  }
+
+  /* ---------- STEPPER ---------- */
+  .stepper {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.8rem 0 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .step-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1.1rem 0.5rem 0.6rem;
+    border-radius: 100px;
+    background: #f4efe7;
+    border: 1px solid var(--sand);
+    transition: all 0.35s ease;
+    opacity: 0.55;
+  }
+
+  .step-item .dot {
+    width: 1.9rem; height: 1.9rem;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    background: #d8cfc2;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all 0.35s ease;
+  }
+
+  .step-item .label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  .step-item.active {
+    background: #fff;
+    border-color: var(--red);
+    opacity: 1;
+    box-shadow: 0 6px 16px -8px rgba(201,42,42,0.4);
+  }
+
+  .step-item.active .dot { background: var(--red); color: #fff; }
+
+  .step-item.done {
+    opacity: 1;
+    background: #e8f7ee;
+    border-color: #b8e0c8;
+  }
+
+  .step-item.done .dot { background: #1f7a4d; }
+  .step-item.done .dot i { font-size: 0.75rem; }
+
+  /* ---------- PANELS ---------- */
+  .panel { display: none; }
+  .panel.active { display: block; animation: panelIn 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
+
+  @keyframes panelIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- FORM GRID ---------- */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem 1.4rem;
+    margin-top: 1.5rem;
+  }
+
+  .input-group { display: flex; flex-direction: column; gap: 0.35rem; }
+
+  .input-group.full { grid-column: span 2; }
+
+  .input-group label {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--ink);
+    margin-left: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .input-group label i { color: var(--red); font-size: 0.85rem; }
+
+  .input-group input,
+  .input-group select {
+    padding: 0.85rem 1.2rem;
+    border-radius: 100px;
+    border: 1.5px solid #ded7cd;
+    background: #fdfbf7;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.97rem;
+    color: var(--ink);
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    width: 100%;
+  }
+
+  .input-group input:focus,
+  .input-group select:focus {
+    outline: none;
+    border-color: var(--red);
+    box-shadow: 0 0 0 4px rgba(201, 42, 42, 0.1);
+    background: #fff;
+  }
+
+  .input-group input.valid,
+  .input-group select.valid { border-color: #1f7a4d; background: #f6fdf9; }
+
+  .input-group input.error,
+  .input-group select.error {
+    border-color: #e8a020;
+    box-shadow: 0 0 0 4px rgba(232,160,32,0.12);
+    animation: shake 0.4s ease;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+
+  .hint {
+    font-size: 0.75rem;
+    color: #8a8177;
+    margin-left: 0.5rem;
+    font-weight: 500;
+  }
+
+  .file-upload {
+    background: #f7f1e8;
+    border: 2px dashed #c2b4a2;
+    border-radius: var(--radius-lg);
+    padding: 1.1rem 1.2rem;
+    text-align: center;
+    font-weight: 600;
+    color: #5b4e3e;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .file-upload:hover { background: #f2eadf; border-color: var(--gold); }
+
+  .file-upload i { color: var(--red); margin-right: 8px; }
+
+  .file-upload input { display: none; }
+
+  .file-name {
+    display: block;
+    font-size: 0.8rem;
+    color: #8a8177;
+    margin-top: 0.35rem;
+    font-weight: 500;
+    word-break: break-all;
+  }
+
+  .checkbox-row {
+    grid-column: span 2;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #f9f4ec;
+    padding: 1.1rem 1.4rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--sand);
+    margin-top: 0.4rem;
+  }
+
+  .checkbox-row input {
+    width: 22px; height: 22px;
+    accent-color: var(--red);
+    margin-top: 2px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .checkbox-row label { font-size: 0.93rem; font-weight: 500; color: var(--ink-soft); cursor: pointer; }
+
+  .btn-register {
+    grid-column: span 2;
+    background: var(--red);
+    color: #fff;
+    border: 1px solid var(--red-dark);
+    padding: 1.2rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+    border-radius: 100px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 9px 0 var(--red-dark);
+    transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+    margin-top: 0.6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-register:hover:not(:disabled) { background: #b01e1e; transform: translateY(-2px); box-shadow: 0 11px 0 var(--red-dark); }
+  .btn-register:active:not(:disabled) { transform: translateY(5px); box-shadow: 0 4px 0 var(--red-dark); }
+  .btn-register:disabled { opacity: 0.85; cursor: wait; }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink-soft);
+    border: 1.5px solid #ded7cd;
+    padding: 0.9rem 1.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 100px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.2s, border-color 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .btn-secondary:hover { background: #f5efe8; border-color: #c2b4a2; }
+
+  .form-foot {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #8a8177;
+    margin-top: 1.4rem;
+  }
+
+  /* ---------- PAYMENT PANEL ---------- */
+  .panel-head { text-align: center; margin: 1.5rem 0 1.8rem; }
+
+  .step-badge {
+    display: inline-block;
+    background: #fff1e0;
+    color: #b45309;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 40px;
+    margin-bottom: 0.9rem;
+  }
+
+  .panel-head h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 3.8vw, 2rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .panel-head p { color: #6b7280; max-width: 520px; margin: 0 auto; }
+
+  .summary-card {
+    background: #f9f4ec;
+    border: 1px solid var(--sand);
+    border-radius: var(--radius-lg);
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.55rem 0;
+    border-bottom: 1px dashed #e0d6c8;
+    font-size: 0.95rem;
+  }
+
+  .summary-row:last-child { border-bottom: none; }
+
+  .summary-row span { color: #8a8177; font-weight: 500; }
+
+  .summary-row strong {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: right;
+  }
+
+  .summary-row.ref strong {
+    color: var(--red);
+    letter-spacing: 0.05em;
+    background: #fff;
+    padding: 0.2rem 0.7rem;
+    border-radius: 40px;
+    border: 1px solid #f0d5d5;
+  }
+
+  .pay-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .pay-option {
+    background: #fff;
+    border: 1.5px solid var(--sand);
+    border-radius: var(--radius-lg);
+    padding: 1.1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .pay-option:hover { border-color: var(--gold); transform: translateY(-3px); }
+
+  .pay-option i { font-size: 1.6rem; color: var(--red); flex-shrink: 0; }
+
+  .pay-option .info { flex: 1; min-width: 0; }
+
+  .pay-option h5 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .pay-option p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--ink);
+    letter-spacing: 0.03em;
+    margin: 0;
+  }
+
+  .copy-btn {
+    background: #f4efe7;
+    border: 1px solid var(--sand);
+    color: var(--ink-soft);
+    width: 2.2rem; height: 2.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: grid; place-items: center;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+    flex-shrink: 0;
+  }
+
+  .copy-btn:hover { background: var(--ink); color: #fff; }
+  .copy-btn:active { transform: scale(0.9); }
+  .copy-btn.copied { background: #1f7a4d; color: #fff; border-color: #1f7a4d; }
+
+  .pay-steps {
+    background: #fffdf9;
+    border: 1px solid var(--sand);
+    border-radius: var(--radius-lg);
+    padding: 1.3rem 1.5rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .pay-steps h5 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .pay-steps h5 i { color: var(--gold); }
+
+  .pay-steps ol {
+    list-style: none;
+    counter-reset: step;
+  }
+
+  .pay-steps ol li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 2.2rem;
+    margin-bottom: 0.7rem;
+    font-size: 0.93rem;
+    color: var(--ink-soft);
+  }
+
+  .pay-steps ol li:last-child { margin-bottom: 0; }
+
+  .pay-steps ol li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 0;
+    width: 1.5rem; height: 1.5rem;
+    background: var(--red);
+    color: #fff;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .pay-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .pay-actions .btn-register { flex: 1 1 240px; margin-top: 0; }
+
+  /* ---------- SUCCESS PANEL ---------- */
+  .success-wrap { text-align: center; padding: 1rem 0 0.5rem; }
+
+  .success-check {
+    width: 110px; height: 110px;
+    margin: 0 auto 1.5rem;
+    display: block;
+  }
+
+  .success-check circle {
+    stroke: #1f7a4d;
+    stroke-width: 3;
+    fill: none;
+    stroke-dasharray: 320;
+    stroke-dashoffset: 320;
+    animation: drawCircle 0.9s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+
+  .success-check path {
+    stroke: #1f7a4d;
+    stroke-width: 5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 80;
+    stroke-dashoffset: 80;
+    animation: drawCheck 0.5s 0.7s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+
+  @keyframes drawCircle { to { stroke-dashoffset: 0; } }
+  @keyframes drawCheck { to { stroke-dashoffset: 0; } }
+
+  .success-wrap h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.1rem);
+    margin-bottom: 0.6rem;
+    color: #1f7a4d;
+  }
+
+  .success-wrap > p { color: #6b7280; max-width: 480px; margin: 0 auto 1.5rem; }
+
+  .ref-box {
+    display: inline-block;
+    background: #f9f4ec;
+    border: 1.5px dashed var(--gold);
+    border-radius: var(--radius-lg);
+    padding: 0.9rem 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ref-box .ref-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #8a8177;
+    font-weight: 700;
+    display: block;
+  }
+
+  .ref-box .ref-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 0.08em;
+  }
+
+  .success-actions {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  /* ---------- TOAST ---------- */
+  .toast {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%) translateY(24px);
+    background: var(--ink);
+    color: #fff;
+    padding: 0.9rem 1.5rem;
+    border-radius: 100px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    box-shadow: 0 16px 32px -12px rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 90vw;
+    text-align: left;
+  }
+
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .toast i { color: var(--gold); font-size: 1.1rem; flex-shrink: 0; }
+  .toast.success i { color: var(--green); }
+  .toast.error i { color: #ff8787; }
+
+  /* ---------- WHATSAPP ---------- */
+  .whatsapp-band {
+    background: var(--green-dark);
+    color: #fff;
+    text-align: center;
+    border-radius: var(--radius-xl);
+    padding: 3rem 1.8rem;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .whatsapp-band::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(37,211,102,0.35), transparent 55%);
+    pointer-events: none;
+  }
+
+  .whatsapp-band > * { position: relative; z-index: 1; }
+
+  .whatsapp-band i.fa-whatsapp { font-size: 3.6rem; color: var(--green); margin-bottom: 0.6rem; }
+
+  .whatsapp-band h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .whatsapp-band p { opacity: 0.85; margin-bottom: 1.8rem; }
+
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--green);
+    color: #06301f;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 1rem 2.4rem;
+    border-radius: 100px;
+    box-shadow: 0 8px 0 #128c7e;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+    border: 1px solid #1da851;
+  }
+
+  .whatsapp-btn:hover { background: #20b859; transform: translateY(-2px); box-shadow: 0 10px 0 #128c7e; }
+  .whatsapp-btn:active { transform: translateY(4px); box-shadow: 0 4px 0 #128c7e; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    text-align: center;
+    padding: 3rem 1.5rem 7rem;
+    font-size: 0.88rem;
+    color: #8a8177;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  footer strong { color: var(--ink); }
+
+  /* ---------- STICKY CTA ---------- */
+  .sticky-cta {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 60;
+    background: rgba(20, 23, 31, 0.92);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding: 0.8rem 1rem;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(110%);
+    transition: transform 0.35s ease;
+  }
+
+  .sticky-cta.show { transform: translateY(0); }
+  .sticky-cta.hidden { transform: translateY(110%); }
+
+  .sticky-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 100px;
+    padding: 0.85rem 1.6rem;
+    font-size: 1rem;
+    transition: transform 0.15s, background 0.2s;
+  }
+
+  .sticky-cta a:active { transform: scale(0.97); }
+
+  .sticky-cta .cta-register { background: var(--red); color: #fff; box-shadow: 0 5px 0 var(--red-dark); }
+  .sticky-cta .cta-register:hover { background: #b01e1e; }
+  .sticky-cta .cta-wa { background: var(--green); color: #06301f; box-shadow: 0 5px 0 #128c7e; }
+  .sticky-cta .cta-wa:hover { background: #20b859; }
+
+  /* ---------- REVEAL ---------- */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .scroll-hint i { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 720px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .input-group.full, .checkbox-row, .btn-register { grid-column: span 1; }
+    .form-card { padding: 1.8rem 1.3rem 2.2rem; border-radius: var(--radius-lg); }
+    blockquote { padding: 1.3rem 1rem 1.3rem 1.5rem; border-left-width: 7px; }
+    .story { padding: 2.6rem 1.2rem; }
+    .hero { padding: 3.2rem 1.2rem 3rem; }
+    .sticky-cta a { padding: 0.8rem 1.1rem; font-size: 0.9rem; }
+    .sticky-cta a span { display: none; }
+    .sticky-cta a i { font-size: 1.2rem; margin: 0; }
+    .step-item .label { display: none; }
+    .step-item { padding: 0.5rem; }
+    .toast { bottom: 88px; font-size: 0.85rem; padding: 0.8rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div id="readProgress"></div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge"><i class="fas fa-gavel"></i> Bill in progress · Collecting signatures</div>
+    <h1>
+      A <span class="hl">12-month rent holiday</span><br />
+      for <span class="red">2 million</span> Ugandans.
+    </h1>
+    <p class="sub">
+      Hon. Zambali Blasio is proposing a bill in Parliament to freeze rent — fully paid by the Government of Uganda to landlords.
+    </p>
+
+    <div class="counter">
+      <i class="fas fa-users"></i>
+      <div>
+        <div class="num" id="heroCount">1,023</div>
+        <div class="lbl">Already registered · Batch 1</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      Read the story
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= STORY: THE PROBLEM ================= -->
+  <section class="story reveal">
+    <p class="lead">Right now, across Uganda, millions wake up to the same heavy question.</p>
+    <p><em>Will I make rent this month?</em></p>
+    <p>It is a question that quietly steals sleep, swallows savings, and forces families to choose between shelter and supper. Rent has become the most demanding burden on the ordinary citizen — and it is not letting go.</p>
+  </section>
+
+  <section class="story reveal" style="padding-top: 0;">
+    <blockquote>
+      Hon. Zambali Blasio is proposing a bill in Parliament to freeze rent for 2 million Ugandans — in batches — for a full year (12 months), fully paid by the Government of Uganda to landlords.
+    </blockquote>
+    <p>The bill is yet to reach Parliament. But according to the view of things now, it is most likely to pass.</p>
+  </section>
+
+  <!-- ================= STORY: THE SIGNATURES ================= -->
+  <section class="story reveal" style="padding-top: 0;">
+    <blockquote class="gold">
+      We are at the stage of collecting signatures from real persons who second the bill — to prove it is true and helpful towards citizens.
+    </blockquote>
+    <p>This is where you come in. Every real name, every real signature, moves the bill closer to the floor of Parliament. It is not just a form — it is your voice, counted.</p>
+  </section>
+
+  <!-- ================= STATS BAND ================= -->
+  <section class="band stats-band">
+    <div class="band-inner">
+      <div class="stats-grid">
+        <div class="stat reveal">
+          <i class="fas fa-home"></i>
+          <span class="big">12</span>
+          <span class="lbl">Months rent free</span>
+        </div>
+        <div class="stat reveal">
+          <i class="fas fa-hand-holding-usd"></i>
+          <span class="big">100%</span>
+          <span class="lbl">Paid by Gov't</span>
+        </div>
+        <div class="stat reveal">
+          <i class="fas fa-users"></i>
+          <span class="big">2M</span>
+          <span class="lbl">Ugandans targeted</span>
+        </div>
+        <div class="stat reveal">
+          <i class="fas fa-layer-group"></i>
+          <span class="big">Batch 1</span>
+          <span class="lbl">Open now</span>
+        </div>
+        <div class="stat reveal">
+          <i class="fas fa-tag"></i>
+          <span class="big">20K</span>
+          <span class="lbl">Registration fee</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STORY: WHAT IT MEANS ================= -->
+  <section class="story reveal">
+    <p class="lead">So what does this actually mean for you?</p>
+    <blockquote class="dark">
+      At least a year's rent holiday. No rent stress. A chance to breathe, to recover, and to mend your finances.
+    </blockquote>
+    <p>Hon. Zambali Blasio intends to support struggling members of society by lifting the most demanding burden off their shoulders — rent. For twelve full months, the Government of Uganda pays your landlord. You keep your home, and you keep your peace.</p>
+  </section>
+
+  <!-- ================= STORY: FOCUS ================= -->
+  <section class="story reveal" style="padding-top: 0;">
+    <blockquote>
+      Focus on what matters — the Government is freeing your rent. Here's to you, rent holidays. 🥂
+    </blockquote>
+    <p>This program is for all citizens who need a rent break. Whether you are employed, self-employed, or jobless — if rent is heavy on you, this is your opportunity.</p>
+    <blockquote class="gold">
+      Ugandans, the opportunity is here. Free rent for a whole year — or two.
+    </blockquote>
+  </section>
+
+  <!-- ================= REQUIREMENTS ================= -->
+  <section class="band" style="background: #f7f1e8;">
+    <div class="band-inner">
+      <div class="story reveal" style="padding: 0; max-width: 100%; text-align: center;">
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 0.6rem;">
+          What you need to register
+        </h2>
+        <p style="color: #6b7280; max-width: 560px; margin: 0 auto;">
+          Keep these ready before you fill the form. It takes less than 3 minutes.
+        </p>
+      </div>
+
+      <div class="req-grid">
+        <div class="req-card reveal">
+          <i class="fas fa-id-card"></i>
+          <div>
+            <h4>National ID</h4>
+            <p>Your valid Ugandan National ID is required to confirm you are a citizen.</p>
+          </div>
+        </div>
+        <div class="req-card reveal">
+          <i class="fas fa-receipt"></i>
+          <div>
+            <h4>Rent receipts in your name</h4>
+            <p>Receipts prove you pay rent and help validate your application.</p>
+          </div>
+        </div>
+        <div class="req-card reveal">
+          <i class="fas fa-coins"></i>
+          <div>
+            <h4>20K registration fee</h4>
+            <p>A one-time fee of UGX 20,000 to process and verify your registration.</p>
+          </div>
+        </div>
+        <div class="req-card reveal">
+          <i class="fas fa-user-check"></i>
+          <div>
+            <h4>Must be a citizen</h4>
+            <p>This program is open to all Ugandan citizens who need a rent break.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REGISTRATION + PAYMENT FLOW ================= -->
+  <section class="band form-section" id="register">
+    <div class="form-card reveal">
+
+      <!-- Stepper -->
+      <div class="stepper" id="stepper">
+        <div class="step-item active" data-step="1">
+          <span class="dot">1</span>
+          <span class="label">Your details</span>
+        </div>
+        <div class="step-item" data-step="2">
+          <span class="dot">2</span>
+          <span class="label">Payment</span>
+        </div>
+        <div class="step-item" data-step="3">
+          <span class="dot">3</span>
+          <span class="label">Confirmed</span>
+        </div>
+      </div>
+
+      <!-- ===== PANEL 1: FORM ===== -->
+      <div class="panel active" id="panel1">
+        <div class="form-head" style="margin-top: 1.5rem;">
+          <div class="pill"><i class="fas fa-clock"></i> Batch 1 · Open now</div>
+          <h2>Register for the waiting list</h2>
+          <p>Add your name to the citizens already standing behind the bill. Your signature is your vote.</p>
+          <div class="count-progress"><span id="countBar"></span></div>
+          <div class="progress-note" id="countNote">Loading…</div>
+        </div>
+
+        <form class="form-grid" id="regForm" novalidate>
+          <!-- Name -->
+          <div class="input-group">
+            <label><i class="fas fa-user"></i> Full name</label>
+            <input type="text" name="name" id="f_name" placeholder="e.g. Nakato Sarah" required autocomplete="name" />
+          </div>
+
+          <!-- Telephone -->
+          <div class="input-group">
+            <label><i class="fas fa-phone-alt"></i> Telephone</label>
+            <input type="tel" name="phone" id="f_phone" placeholder="+256 7XX XXX XXX" required autocomplete="tel" />
+          </div>
+
+          <!-- Monthly rent -->
+          <div class="input-group">
+            <label><i class="fas fa-money-bill-wave"></i> Monthly rent (UGX)</label>
+            <input type="text" name="rent" id="f_rent" placeholder="e.g. 300,000" inputmode="numeric" required />
+          </div>
+
+          <!-- Receipts -->
+          <div class="input-group">
+            <label><i class="fas fa-file-invoice"></i> Do you have receipts?</label>
+            <select name="receipts" id="f_receipts" required>
+              <option value="" disabled selected>Select</option>
+              <option>Yes, I have receipts</option>
+              <option>No, I don't have receipts</option>
+              <option>Some receipts</option>
+            </select>
+          </div>
+
+          <!-- Percentage -->
+          <div class="input-group">
+            <label><i class="fas fa-percent"></i> What % should Gov't help?</label>
+            <select name="percent" id="f_percent" required>
+              <option value="" disabled selected>Choose percentage</option>
+              <option>10%</option>
+              <option>40%</option>
+              <option>60%</option>
+              <option>75%</option>
+              <option>100%</option>
+            </select>
+          </div>
+
+          <!-- National ID -->
+          <div class="input-group">
+            <label><i class="fas fa-id-card"></i> Do you have National ID?</label>
+            <select name="nationalId" id="f_nid" required>
+              <option value="" disabled selected>Select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <!-- DOB -->
+          <div class="input-group">
+            <label><i class="fas fa-calendar-alt"></i> Date of Birth</label>
+            <input type="date" name="dob" id="f_dob" required />
+          </div>
+
+          <!-- Employment -->
+          <div class="input-group">
+            <label><i class="fas fa-briefcase"></i> Employment status</label>
+            <select name="employment" id="f_emp" required>
+              <option value="" disabled selected>Select</option>
+              <option>Employed</option>
+              <option>Self-employed</option>
+              <option>Jobless</option>
+            </select>
+          </div>
+
+          <!-- Upload receipts -->
+          <div class="input-group full">
+            <label><i class="fas fa-cloud-upload-alt"></i> Upload rent receipts (optional, but helps)</label>
+            <label class="file-upload" for="receiptUpload">
+              <i class="fas fa-file-pdf"></i> Click to upload receipts (PDF, JPG, PNG)
+              <input type="file" id="receiptUpload" name="receiptsFile" accept=".pdf,.jpg,.jpeg,.png" multiple />
+              <span class="file-name" id="fileName">No file chosen</span>
+            </label>
+          </div>
+
+          <!-- Terms -->
+          <div class="checkbox-row">
+            <input type="checkbox" id="termsCheck" required />
+            <label for="termsCheck">
+              I agree to the <strong>terms &amp; conditions</strong> and confirm that all information is true. I understand this is a signature collection for the Rent Freeze Bill.
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn-register" id="btnContinue">
+            <i class="fas fa-arrow-right"></i> Continue to payment
+          </button>
+        </form>
+
+        <p class="form-foot"><i class="fas fa-lock"></i> Your information is saved securely on your device.</p>
+      </div>
+
+      <!-- ===== PANEL 2: PAYMENT ===== -->
+      <div class="panel" id="panel2">
+        <div class="panel-head">
+          <div class="step-badge">Step 2 of 3</div>
+          <h3>Complete your registration</h3>
+          <p>Pay the UGX 20,000 registration fee using the mobile money number below, then enter your transaction ID.</p>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-row"><span>Name</span><strong id="sumName">—</strong></div>
+          <div class="summary-row"><span>Phone</span><strong id="sumPhone">—</strong></div>
+          <div class="summary-row"><span>Amount</span><strong>UGX 20,000</strong></div>
+          <div class="summary-row ref"><span>Your reference</span><strong id="sumRef">—</strong></div>
+        </div>
+
+        <div class="pay-grid">
+          <div class="pay-option">
+            <i class="fas fa-mobile-alt"></i>
+            <div class="info">
+              <h5>Mobile Money — Acram</h5>
+              <p>0752 458 198</p>
+            </div>
+            <button type="button" class="copy-btn" data-copy="0752458198" aria-label="Copy number">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="pay-steps">
+          <h5><i class="fas fa-list-ol"></i> How to pay</h5>
+          <ol>
+            <li>Dial your mobile money menu and choose <strong>Send Money</strong>.</li>
+            <li>Send <strong>UGX 20,000</strong> to <strong>0752 458 198 (Acram)</strong>.</li>
+            <li>Use your reference code <strong id="refInline">—</strong> as the reason.</li>
+            <li>Copy the transaction ID from your confirmation SMS.</li>
+            <li>Paste it below and tap <strong>Confirm payment</strong>.</li>
+          </ol>
+        </div>
+
+        <form id="payForm" novalidate>
+          <div class="input-group full" style="margin-bottom: 1.2rem;">
+            <label><i class="fas fa-receipt"></i> Transaction ID</label>
+            <input type="text" id="f_txid" placeholder="e.g. 1234567890" required autocomplete="off" />
+            <span class="hint">Found in your mobile money confirmation SMS.</span>
+          </div>
+
+          <div class="pay-actions">
+            <button type="button" class="btn-secondary" id="btnBack">
+              <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <button type="submit" class="btn-register" id="btnConfirm">
+              <i class="fas fa-check-circle"></i> Confirm payment
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ===== PANEL 3: SUCCESS ===== -->
+      <div class="panel" id="panel3">
+        <div class="success-wrap">
+          <svg class="success-check" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="46" />
+            <path d="M30 52 L44 66 L72 36" />
+          </svg>
+
+          <h3>You're on the list!</h3>
+          <p>Your registration has been received and your details have been automatically submitted to the admin. Keep your reference code safe — it identifies your application.</p>
+
+          <div class="ref-box">
+            <span class="ref-label">Reference code</span>
+            <span class="ref-value" id="finalRef">RF-000000</span>
+          </div>
+
+          <div class="success-actions">
+            <a href="https://wa.me/256752458198?text=Hello%20Acram%2C%20I%20just%20registered%20for%20the%20rent%20freeze%20waiting%20list" target="_blank" rel="noopener" class="whatsapp-btn" style="font-size: 1rem; padding: 0.9rem 1.8rem;">
+              <i class="fab fa-whatsapp"></i> Chat with Acram
+            </a>
+            <button type="button" class="btn-secondary" id="btnAgain">
+              <i class="fas fa-user-plus"></i> Register another person
+            </button>
+          </div>
+
+          <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #8a8177;">
+            <i class="fas fa-info-circle"></i> You will be contacted on WhatsApp once your payment is verified.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= WHATSAPP CONTACT ================= -->
+  <section class="band" style="padding-top: 0;">
+    <div class="whatsapp-band reveal">
+      <i class="fab fa-whatsapp"></i>
+      <h3>Questions? Talk to Acram.</h3>
+      <p>We are here to help you register and answer anything about the bill.</p>
+      <a href="https://wa.me/256752458198?text=Hello%20Acram%2C%20I%20want%20to%20join%20the%20rent%20freeze%20waiting%20list"
+         class="whatsapp-btn" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+      <p style="margin-top: 1.2rem; font-size: 0.85rem; opacity: 0.7;">+256 752 458 198 (Acram)</p>
+    </div>
+  </section>
+
+  <!-- ================= CLOSING ================= -->
+  <section class="story reveal" style="text-align: center; padding-top: 1rem;">
+    <blockquote class="dark" style="text-align: left;">
+      The opportunity is here. Free rent for a whole year. Register today — and let your signature speak for you.
+    </blockquote>
+    <p style="margin-bottom: 0;">This is a civic initiative. The bill is yet to be presented in Parliament. All registrations are for signature collection and support.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>Rent Freeze Uganda</strong> · A campaign for 2 million Ugandans.</p>
+  <p style="margin-top: 0.4rem;">© 2025 · Placeholder page for demonstration. All names and numbers are illustrative.</p>
+</footer>
+
+<!-- ================= STICKY CTA ================= -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#register" class="cta-register"><i class="fas fa-pen-fancy"></i> <span>Register Now</span></a>
+  <a href="https://wa.me/256752458198?text=Hello%20Acram%2C%20I%20want%20to%20join%20the%20rent%20freeze%20waiting%20list"
+     class="cta-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span>WhatsApp Acram</span></a>
+</div>
+
+<!-- ================= TOAST ================= -->
+<div class="toast" id="toast"><i class="fas fa-info-circle"></i><span id="toastMsg">Message</span></div>
+
+<!-- ================= EMAILJS SDK ================= -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+     EMAILJS CONFIGURATION
+     ------------------------------------------------------------
+     Replace these three values with your own from emailjs.com:
+     1. Create a free account
+     2. Add an email service (Gmail, etc.)
+     3. Create an email template with variables:
+        {{name}}, {{phone}}, {{rent}}, {{receipts}}, {{percent}},
+        {{national_id}}, {{dob}}, {{employment}}, {{ref}}, {{txid}},
+        {{completed_at}}
+     4. Copy your Service ID, Template ID, and Public Key below.
+  ============================================================ */
+  const EMAILJS_SERVICE_ID = 'service_wykha3k';   // <-- replace
+  const EMAILJS_TEMPLATE_ID = 'template_dv6pmfn'; // <-- replace
+  const EMAILJS_PUBLIC_KEY = 'dU7WHs7FNHL5ws_qE';   // <-- replace
+
+  // Initialize EmailJS
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }
+
+  /* ============================================================
+     CONSTANTS
+  ============================================================ */
+  const BASE_COUNT = 1023;
+  const TARGET_COUNT = 2000;
+  const FEE = '20,000';
+
+  const LS_REG = 'rf_registrations_v1';
+  const LS_DRAFT = 'rf_draft_v1';
+  const LS_PENDING = 'rf_pending_v1';
+
+  /* ============================================================
+     STORAGE HELPERS
+  ============================================================ */
+  function lsGet(key, fallback) {
+    try {
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (e) {
+      return fallback;
+    }
+  }
+
+  function lsSet(key, value) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function lsRemove(key) {
+    try { localStorage.removeItem(key); } catch (e) {}
+  }
+
+  /* ============================================================
+     STATE
+  ============================================================ */
+  let registrations = lsGet(LS_REG, []);
+  let pending = lsGet(LS_PENDING, null);
+  let currentStep = 1;
+
+  /* ============================================================
+     UTILITIES
+  ============================================================ */
+  function $(sel, ctx) { return (ctx || document).querySelector(sel); }
+  function $$(sel, ctx) { return Array.from((ctx || document).querySelectorAll(sel)); }
+
+  function generateRef() {
+    const stamp = Date.now().toString(36).toUpperCase().slice(-4);
+    const rand = Math.random().toString(36).toUpperCase().slice(2, 6);
+    return 'RF-' + stamp + rand;
+  }
+
+  function formatNumber(n) {
+    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  function formatPhone(raw) {
+    const digits = raw.replace(/[^\d]/g, '');
+    if (digits.length <= 3) return digits;
+    if (digits.length <= 6) return digits.slice(0, 3) + ' ' + digits.slice(3);
+    if (digits.length <= 9) return digits.slice(0, 3) + ' ' + digits.slice(3, 6) + ' ' + digits.slice(6);
+    return digits.slice(0, 3) + ' ' + digits.slice(3, 6) + ' ' + digits.slice(6, 9) + ' ' + digits.slice(9, 12);
+  }
+
+  /* ============================================================
+     TOAST
+  ============================================================ */
+  let toastTimer = null;
+  function showToast(msg, type) {
+    const toast = $('#toast');
+    const msgEl = $('#toastMsg');
+    const icon = toast.querySelector('i');
+
+    msgEl.textContent = msg;
+    toast.classList.remove('success', 'error');
+    if (type) toast.classList.add(type);
+
+    if (type === 'success') icon.className = 'fas fa-check-circle';
+    else if (type === 'error') icon.className = 'fas fa-exclamation-circle';
+    else icon.className = 'fas fa-info-circle';
+
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      toast.classList.remove('show');
+    }, 3200);
+  }
+
+  /* ============================================================
+     COUNT DISPLAY
+  ============================================================ */
+  function getTotalCount() {
+    return BASE_COUNT + registrations.length;
+  }
+
+  function animateCount(el, from, to, duration) {
+    const start = performance.now();
+    function frame(now) {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const val = Math.round(from + (to - from) * eased);
+      el.textContent = formatNumber(val);
+      if (t < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function updateCountDisplay(animate) {
+    const total = getTotalCount();
+    const heroEl = $('#heroCount');
+    const noteEl = $('#countNote');
+    const barEl = $('#countBar');
+
+    if (animate) {
+      animateCount(heroEl, Math.max(BASE_COUNT, total - 1), total, 900);
+    } else {
+      heroEl.textContent = formatNumber(total);
+    }
+
+    noteEl.textContent = formatNumber(total) + ' registered · Help us reach ' + formatNumber(TARGET_COUNT) + ' in Batch 1';
+
+    const pct = Math.min(100, (total / TARGET_COUNT) * 100);
+    setTimeout(function () { barEl.style.width = pct + '%'; }, 120);
+  }
+
+  /* ============================================================
+     STEPPER / PANELS
+  ============================================================ */
+  function goToStep(n, opts) {
+    opts = opts || {};
+    currentStep = n;
+
+    $$('.panel').forEach(function (p) { p.classList.remove('active'); });
+    var panel = $('#panel' + n);
+    if (panel) panel.classList.add('active');
+
+    $$('.step-item').forEach(function (item) {
+      var s = parseInt(item.getAttribute('data-step'), 10);
+      item.classList.remove('active', 'done');
+      if (s < n) {
+        item.classList.add('done');
+        item.querySelector('.dot').innerHTML = '<i class="fas fa-check"></i>';
+      } else if (s === n) {
+        item.classList.add('active');
+        item.querySelector('.dot').textContent = s;
+      } else {
+        item.querySelector('.dot').textContent = s;
+      }
+    });
+
+    if (!opts.silent) {
+      var card = $('.form-card');
+      if (card) {
+        var top = card.getBoundingClientRect().top + window.pageYOffset - 20;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    }
+  }
+
+  /* ============================================================
+     DRAFT SAVE / RESTORE
+  ============================================================ */
+  var draftFields = ['f_name', 'f_phone', 'f_rent', 'f_receipts', 'f_percent', 'f_nid', 'f_dob', 'f_emp'];
+
+  function saveDraft() {
+    var draft = {};
+    draftFields.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) draft[id] = el.value;
+    });
+    draft.terms = $('#termsCheck').checked;
+    lsSet(LS_DRAFT, draft);
+  }
+
+  function loadDraft() {
+    var draft = lsGet(LS_DRAFT, null);
+    if (!draft) return;
+    draftFields.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && draft[id] !== undefined) el.value = draft[id];
+    });
+    if (draft.terms) $('#termsCheck').checked = true;
+    if (draft.f_rent) {
+      var digits = draft.f_rent.replace(/[^\d]/g, '');
+      if (digits) $('#f_rent').value = formatNumber(digits);
+    }
+  }
+
+  function clearDraft() {
+    lsRemove(LS_DRAFT);
+  }
+
+  /* ============================================================
+     INPUT ENHANCEMENTS + VALIDATION
+  ============================================================ */
+  function attachInputEnhancements() {
+    var rentEl = $('#f_rent');
+    rentEl.addEventListener('input', function () {
+      var digits = this.value.replace(/[^\d]/g, '');
+      this.value = digits ? formatNumber(digits) : '';
+      saveDraft();
+    });
+
+    var phoneEl = $('#f_phone');
+    phoneEl.addEventListener('input', function () {
+      var digits = this.value.replace(/[^\d]/g, '');
+      this.value = digits ? formatPhone(digits) : '';
+      saveDraft();
+    });
+
+    draftFields.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('input', saveDraft);
+      el.addEventListener('change', saveDraft);
+      el.addEventListener('blur', function () { validateField(el); });
+    });
+
+    $('#termsCheck').addEventListener('change', saveDraft);
+  }
+
+  function validateField(el) {
+    if (!el.value.trim()) {
+      el.classList.remove('valid', 'error');
+      return false;
+    }
+    var ok = el.checkValidity();
+    el.classList.toggle('valid', ok);
+    el.classList.toggle('error', !ok);
+    return ok;
+  }
+
+  function validateForm() {
+    var form = $('#regForm');
+    var valid = true;
+    var firstInvalid = null;
+
+    $$('#regForm [required]').forEach(function (el) {
+      var ok = true;
+      if (el.type === 'checkbox') {
+        ok = el.checked;
+      } else if (el.type === 'file') {
+        ok = true;
+      } else {
+        ok = el.value.trim() !== '' && el.checkValidity();
+      }
+
+      if (!ok) {
+        valid = false;
+        el.classList.add('error');
+        if (!firstInvalid) firstInvalid = el;
+      } else {
+        el.classList.remove('error');
+        if (el.value && el.value.trim()) el.classList.add('valid');
+      }
+    });
+
+    if (!valid && firstInvalid) {
+      firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      firstInvalid.focus({ preventScroll: true });
+      showToast('Please check the highlighted fields.', 'error');
+    }
+
+    return valid;
+  }
+
+  /* ============================================================
+     FORM SUBMIT → PAYMENT
+  ============================================================ */
+  function handleRegisterSubmit(e) {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    var btn = $('#btnContinue');
+    var original = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving…';
+    btn.disabled = true;
+
+    var data = {
+      name: $('#f_name').value.trim(),
+      phone: $('#f_phone').value.trim(),
+      rent: $('#f_rent').value.trim(),
+      receipts: $('#f_receipts').value,
+      percent: $('#f_percent').value,
+      nationalId: $('#f_nid').value,
+      dob: $('#f_dob').value,
+      employment: $('#f_emp').value,
+      ref: generateRef(),
+      createdAt: new Date().toISOString(),
+      status: 'awaiting_payment'
+    };
+
+    setTimeout(function () {
+      pending = data;
+      lsSet(LS_PENDING, pending);
+
+      $('#sumName').textContent = data.name;
+      $('#sumPhone').textContent = data.phone;
+      $('#sumRef').textContent = data.ref;
+      $('#refInline').textContent = data.ref;
+
+      btn.innerHTML = original;
+      btn.disabled = false;
+
+      goToStep(2);
+      showToast('Details saved. Complete your payment below.', 'success');
+      setTimeout(function () { $('#f_txid').focus(); }, 700);
+    }, 700);
+  }
+
+  /* ============================================================
+     EMAIL SUBMISSION (EmailJS)
+  ============================================================ */
+  function sendRegistrationEmail(record) {
+    if (typeof emailjs === 'undefined') {
+      return Promise.reject(new Error('EmailJS not loaded'));
+    }
+
+    var templateParams = {
+      // Common template fields
+      to_email: 'aki@cabuyi.com',
+      from_name: 'Rent Freeze Registration',
+      subject: 'New Registration — ' + record.ref,
+      message: buildEmailMessage(record),
+
+      // Individual fields for template flexibility
+      name: record.name,
+      phone: record.phone,
+      rent: record.rent,
+      receipts: record.receipts,
+      percent: record.percent,
+      national_id: record.nationalId,
+      dob: record.dob,
+      employment: record.employment,
+      ref: record.ref,
+      txid: record.txid,
+      completed_at: new Date(record.completedAt).toLocaleString()
+    };
+
+    return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+  }
+
+  function buildEmailMessage(record) {
+    return [
+      'New Rent Freeze Registration',
+      '-----------------------------',
+      'Name: ' + record.name,
+      'Phone: ' + record.phone,
+      'Monthly rent: UGX ' + record.rent,
+      'Receipts: ' + record.receipts,
+      'Gov\'t help: ' + record.percent,
+      'National ID: ' + record.nationalId,
+      'DOB: ' + record.dob,
+      'Employment: ' + record.employment,
+      'Reference: ' + record.ref,
+      'Transaction ID: ' + record.txid,
+      'Completed: ' + new Date(record.completedAt).toLocaleString()
+    ].join('\n');
+  }
+
+  /* ============================================================
+     PAYMENT SUBMIT → SUCCESS
+  ============================================================ */
+  function handlePaymentSubmit(e) {
+    e.preventDefault();
+
+    var txidEl = $('#f_txid');
+    var txid = txidEl.value.trim();
+
+    if (txid.length < 4) {
+      txidEl.classList.add('error');
+      txidEl.focus();
+      showToast('Please enter a valid transaction ID.', 'error');
+      setTimeout(function () { txidEl.classList.remove('error'); }, 1400);
+      return;
+    }
+
+    if (!pending) {
+      showToast('Session expired. Please start again.', 'error');
+      goToStep(1);
+      return;
+    }
+
+    var btn = $('#btnConfirm');
+    var original = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Confirming…';
+    btn.disabled = true;
+
+    // Build final record
+    var record = Object.assign({}, pending, {
+      txid: txid,
+      status: 'complete',
+      completedAt: new Date().toISOString()
+    });
+
+    // Save locally first
+    registrations.push(record);
+    lsSet(LS_REG, registrations);
+    lsRemove(LS_PENDING);
+    pending = null;
+    clearDraft();
+
+    // Show success panel
+    $('#finalRef').textContent = record.ref;
+    updateCountDisplay(true);
+    goToStep(3);
+
+    // Send email automatically
+    sendRegistrationEmail(record)
+      .then(function () {
+        showToast('Registration complete! Details sent to admin. 🎉', 'success');
+      })
+      .catch(function (err) {
+        console.warn('Email send failed:', err);
+        showToast('Registration saved, but automatic email failed. Please contact Acram on WhatsApp.', 'error');
+      })
+      .finally(function () {
+        btn.innerHTML = original;
+        btn.disabled = false;
+      });
+  }
+
+  /* ============================================================
+     RESET FOR ANOTHER PERSON
+  ============================================================ */
+  function resetForAnother() {
+    $('#regForm').reset();
+    $('#payForm').reset();
+    $$('#regForm .valid, #regForm .error').forEach(function (el) {
+      el.classList.remove('valid', 'error');
+    });
+    $('#fileName').textContent = 'No file chosen';
+    clearDraft();
+    goToStep(1);
+    showToast('Ready for the next registration.', 'info');
+  }
+
+  /* ============================================================
+     COPY TO CLIPBOARD
+  ============================================================ */
+  function attachCopyButtons() {
+    $$('.copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var value = btn.getAttribute('data-copy');
+        if (!value) return;
+
+        function done() {
+          var icon = btn.querySelector('i');
+          var old = icon.className;
+          btn.classList.add('copied');
+          icon.className = 'fas fa-check';
+          showToast('Copied: ' + value, 'success');
+          setTimeout(function () {
+            btn.classList.remove('copied');
+            icon.className = old;
+          }, 1600);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(value).then(done).catch(function () {
+            fallbackCopy(value, done);
+          });
+        } else {
+          fallbackCopy(value, done);
+        }
+      });
+    });
+  }
+
+  function fallbackCopy(text, cb) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); cb(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  /* ============================================================
+     REVEAL ON SCROLL
+  ============================================================ */
+  function attachReveal() {
+    var reveals = $$('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      reveals.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(function (el) { observer.observe(el); });
+  }
+
+  /* ============================================================
+     READING PROGRESS
+  ============================================================ */
+  function attachReadingProgress() {
+    var bar = $('#readProgress');
+    function update() {
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = h > 0 ? (window.pageYOffset / h) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, pct)) + '%';
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  /* ============================================================
+     STICKY CTA VISIBILITY
+  ============================================================ */
+  function attachStickyCta() {
+    var sticky = $('#stickyCta');
+    var hero = $('.hero');
+    var formSection = $('.form-section');
+
+    function update() {
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      var formRect = formSection.getBoundingClientRect();
+      var formInView = formRect.top < window.innerHeight && formRect.bottom > 0;
+
+      if (heroBottom < 80 && !formInView) {
+        sticky.classList.add('show');
+        sticky.classList.remove('hidden');
+      } else {
+        sticky.classList.remove('show');
+      }
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  /* ============================================================
+     SMOOTH ANCHOR SCROLL (fallback)
+  ============================================================ */
+  function attachSmoothAnchors() {
+    var supportsSmooth = 'scrollBehavior' in document.documentElement.style;
+    if (supportsSmooth) return;
+
+    $$('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var id = a.getAttribute('href');
+        if (id === '#' || id.length < 2) return;
+        var target = document.querySelector(id);
+        if (!target) return;
+
+        e.preventDefault();
+        var targetY = target.getBoundingClientRect().top + window.pageYOffset - 20;
+        var startY = window.pageYOffset;
+        var distance = targetY - startY;
+        var duration = 700;
+        var start = performance.now();
+
+        function step(now) {
+          var t = Math.min((now - start) / duration, 1);
+          var eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+          window.scrollTo(0, startY + distance * eased);
+          if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    });
+  }
+
+  /* ============================================================
+     FILE INPUT DISPLAY
+  ============================================================ */
+  function attachFileInput() {
+    var input = $('#receiptUpload');
+    input.addEventListener('change', function () {
+      var nameEl = $('#fileName');
+      if (input.files && input.files.length > 0) {
+        var names = Array.from(input.files).map(function (f) { return f.name; }).join(', ');
+        nameEl.textContent = names.length > 64 ? names.slice(0, 64) + '…' : names;
+      } else {
+        nameEl.textContent = 'No file chosen';
+      }
+    });
+  }
+
+  /* ============================================================
+     RESTORE SESSION
+  ============================================================ */
+  function restoreSession() {
+    if (pending) {
+      $('#sumName').textContent = pending.name;
+      $('#sumPhone').textContent = pending.phone;
+      $('#sumRef').textContent = pending.ref;
+      $('#refInline').textContent = pending.ref;
+
+      if (pending.name) $('#f_name').value = pending.name;
+      if (pending.phone) $('#f_phone').value = pending.phone;
+
+      goToStep(2, { silent: true });
+
+      setTimeout(function () {
+        showToast('Welcome back — continue your registration.', 'info');
+      }, 600);
+    } else {
+      loadDraft();
+      goToStep(1, { silent: true });
+    }
+  }
+
+  /* ============================================================
+     INIT
+  ============================================================ */
+  function init() {
+    updateCountDisplay(false);
+    attachInputEnhancements();
+    attachCopyButtons();
+    attachReveal();
+    attachReadingProgress();
+    attachStickyCta();
+    attachSmoothAnchors();
+    attachFileInput();
+
+    $('#regForm').addEventListener('submit', handleRegisterSubmit);
+    $('#payForm').addEventListener('submit', handlePaymentSubmit);
+    $('#btnBack').addEventListener('click', function () {
+      goToStep(1);
+      showToast('You can edit your details and continue.', 'info');
+    });
+    $('#btnAgain').addEventListener('click', resetForAnother);
+
+    restoreSession();
+
+    setTimeout(function () {
+      animateCount($('#heroCount'), 0, getTotalCount(), 1400);
+    }, 250);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+</script>
+
+</body>
+</html>
